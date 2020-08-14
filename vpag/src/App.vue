@@ -1,32 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div class="app-root">
     <router-view />
+    <v-snackbar bottom right :value="updateExists" :timeout="-1" color="primary">
+      An update is available
+      <v-btn text @click="refreshApp">
+        Update
+      </v-btn>
+    </v-snackbar>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import update from "./mixins/update"
 
-#nav {
-  padding: 30px;
+export default {
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+   data() {
+    return {}
+  },
+  mixins: [update]
+};
+</script>
+<style scoped>
+.setting-fab {
+  top: 50% !important;
+  right: 0;
+  border-radius: 0;
 }
 </style>
