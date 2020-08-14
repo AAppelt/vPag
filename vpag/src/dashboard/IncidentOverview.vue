@@ -2,14 +2,14 @@
   <v-container fluid grid-list-xl>
     <v-layout row wrap>
       <v-flex class="d-flex justify-start" lg6 sm6 xs12>
-        <v-btn color="primary" dark @click="copyView">Share View</v-btn>
+        <!-- <v-btn color="primary" dark @click="copyView">Share View</v-btn> -->
       </v-flex>
       <v-flex class="d-flex justify-end" lg6 sm6 xs12>
         <dialog-filter v-bind="query" @update="update" @loading="setLoading" />
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex lg3 sm6 xs12>
+      <!-- <v-flex lg3 sm6 xs12>
         <stat-widget icon="domain" :title="totalIncidents | toNumberString" supTitle="Incidents" />
       </v-flex>
       <v-flex lg3 sm6 xs12>
@@ -17,14 +17,14 @@
       </v-flex>
       <v-flex lg3 sm6 xs12>
         <stat-widget icon="show_chart" :title="avgCost | toUSD" supTitle="Avg Cost" />
-      </v-flex>
-      <v-flex lg3 sm6 xs12>
+      </v-flex> -->
+      <!-- <v-flex lg3 sm6 xs12>
         <stat-widget
           icon="watch_later"
           :title="totalHours | toNumberString"
           supTitle="Total Hours"
         />
-      </v-flex>
+      </v-flex> -->
       <!-- Widgets Ends -->
       <!-- Statistics -->
       <v-flex lg6 sm6 xs12>
@@ -98,7 +98,7 @@ import differenceInHours from "date-fns/differenceInHours"
 import { parseISO } from "date-fns"
 
 import DialogFilter from "@/dashboard/DialogFilter.vue"
-import StatWidget from "@/components/StatWidget.vue"
+// import StatWidget from "@/components/StatWidget.vue"
 // import IncidentTypeBarChartCard from "@/incident/IncidentTypeBarChartCard.vue"
 // import IncidentActiveTimeCard from "@/incident/IncidentActiveTimeCard.vue"
 // import IncidentResolveTimeCard from "@/incident/IncidentResolveTimeCard.vue"
@@ -121,7 +121,7 @@ export default {
 
   components: {
     DialogFilter,
-    StatWidget,
+    // StatWidget,
     // IncidentHeatmapCard,
     // IncidentTypeBarChartCard,
     // IncidentResolveTimeCard,

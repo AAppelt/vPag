@@ -16,7 +16,7 @@
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
         <span class="caption"
-          >Netflix Security &copy; {{ new Date().getFullYear() }}</span
+          >vPag Security &copy; {{ new Date().getFullYear() }}</span
         >
         <v-spacer />
         <span class="caption mr-1">Be Secure</span>

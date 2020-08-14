@@ -11,8 +11,8 @@
       <div class="page-wrapper">
         <v-container pa-4 grid-list-lg>
           <v-tabs v-model="tab">
-            <v-tab to="incidents">Incidents</v-tab>
-            <v-tab to="tasks">Tasks</v-tab>
+            <!-- <v-tab to="incidents">Incidents</v-tab> -->
+            <!-- <v-tab to="tasks">Tasks</v-tab> -->
           </v-tabs>
           <v-tabs-items v-model="tab">
             <v-tab-item id="incidents">
@@ -28,7 +28,7 @@
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
         <span class="caption"
-          >Netflix Security &copy; {{ new Date().getFullYear() }}</span
+          >vPag Security &copy; {{ new Date().getFullYear() }}</span
         >
         <v-spacer />
         <span class="caption mr-1">Be Secure</span>

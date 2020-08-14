@@ -17,11 +17,11 @@
     </v-breadcrumbs>
     <v-spacer />
     <div class="page-header-right">
-      <v-btn icon @click="refresh">
+      <!-- <v-btn icon @click="refresh">
         <v-icon class="text--secondary">
           refresh
         </v-icon>
-      </v-btn>
+      </v-btn> -->
     </div>
   </v-layout>
 </template>

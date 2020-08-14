@@ -1,28 +1,28 @@
 <template>
   <v-app-bar clipped-left clipped-right app color="primary" dark>
     <v-app-bar-nav-icon @click="handleDrawerToggle" />
-    <span class="title ml-3 mr-5">Dispatch</span>
-    <v-text-field
+    <span class="title ml-3 mr-5">vPag</span>
+    <!-- <v-text-field
       v-model="queryString"
       flat
       hide-details
       solo-inverted
       prepend-inner-icon="search"
-      label="Search"
+      label="Buscar"
       clearable
       class="search"
       @keyup.enter="performSearch()"
-    />
+    /> -->
     <v-spacer />
     <v-toolbar-items>
-      <v-tooltip bottom>
+      <!-- <v-tooltip bottom>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on" @click="handleFullScreen()">
             <v-icon>mdi-fullscreen</v-icon>
           </v-btn>
         </template>
         <span>Fullscreen</span>
-      </v-tooltip>
+      </v-tooltip> -->
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
           <v-btn icon large text v-on="on">
