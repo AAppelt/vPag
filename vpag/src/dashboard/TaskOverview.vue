@@ -60,7 +60,7 @@ import { groupBy, sumBy, uniq, map } from "lodash"
 import differenceInHours from "date-fns/differenceInHours"
 import { parseISO } from "date-fns"
 
-import TaskDialogFilter from "@/dashboard/TaskDialogFilter.vue"
+// import TaskDialogFilter from "@/dashboard/TaskDialogFilter.vue"
 import StatWidget from "@/components/StatWidget.vue"
 // import TaskActiveTimeCard from "@/task/TaskActiveTimeCard.vue"
 // import TaskIncidentPriorityBarChartCard from "@/task/TaskIncidentPriorityBarChartCard.vue"
@@ -75,7 +75,7 @@ export default {
   },
 
   components: {
-    TaskDialogFilter,
+    // TaskDialogFilter,
     StatWidget,
     // TaskIncidentPriorityBarChartCard,
     // TaskIncidentTypeBarChartCard,

@@ -97,7 +97,7 @@ import { groupBy, sumBy, filter } from "lodash"
 import differenceInHours from "date-fns/differenceInHours"
 import { parseISO } from "date-fns"
 
-import DialogFilter from "@/dashboard/DialogFilter.vue"
+// import DialogFilter from "@/dashboard/DialogFilter.vue"
 // import StatWidget from "@/components/StatWidget.vue"
 // import IncidentTypeBarChartCard from "@/incident/IncidentTypeBarChartCard.vue"
 // import IncidentActiveTimeCard from "@/incident/IncidentActiveTimeCard.vue"
@@ -120,7 +120,7 @@ export default {
   },
 
   components: {
-    DialogFilter,
+    // DialogFilter,
     // StatWidget,
     // IncidentHeatmapCard,
     // IncidentTypeBarChartCard,
