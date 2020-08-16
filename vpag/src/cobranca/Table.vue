@@ -29,7 +29,7 @@
               :sort-by.sync="sortBy"
               :sort-desc.sync="descending"
               :loading="loading"
-              loading-text="Loading... Please wait"
+              loading-text="Carregando... Por favor aguarde"
             >
               <template v-slot:[`item.name`]="{ item }">
                 <a :href="item.weblink" target="_blank" style="text-decoration: none;">

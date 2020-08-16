@@ -4,6 +4,8 @@ import Vuex from "vuex"
 import app from "@/app/store"
 import definition from "@/definition/store"
 import cobranca from "@/cobranca/store"
+import pagamento from "@/pagamento/store"
+import cliente from "@/cliente/store"
 // import incident from "@/incident/store"
 // import incident_type from "@/incident_type/store"
 // import incident_priority from "@/incident_priority/store"
@@ -30,6 +32,8 @@ export default new Vuex.Store({
     // tag,
     definition,
     cobranca,
+    pagamento,
+    cliente,
     document,
     // incident,
     // incident_type,

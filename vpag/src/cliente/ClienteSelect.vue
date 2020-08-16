@@ -1,7 +1,7 @@
 <template>
-  <ValidationProvider name="cobranca" rules="required" immediate>
+  <ValidationProvider name="cliente" rules="required" immediate>
     <v-autocomplete
-      v-model="cobranca"
+      v-model="cliente"
       :items="items"
       :search-input.sync="search"
       :menu-props="{ maxHeight: '400' }"
@@ -10,7 +10,7 @@
       :error-messages="errors"
       :success="valid"
       item-text="name"
-      label="Cobranca"
+      label="Cliente"
       placeholder="Start typing to search"
 
       return-object
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import CobrancaApi from "@/cobranca/api"
+import ClienteApi from "@/cliente/api"
 import { cloneDeep } from "lodash"
 import { ValidationProvider } from "vee-validate"
 export default {
-  name: "CobrancaSelect",
+  name: "ClienteSelect",
 
   props: {
     value: {
@@ -73,7 +73,7 @@ export default {
     querySelections(v) {
       this.loading = true
       // Simulated ajax query
-      CobrancaApi.getAll({ q: v }).then(response => {
+      ClienteApi.getAll({ q: v }).then(response => {
         this.items = response.data.items
         this.loading = false
       })
@@ -83,7 +83,7 @@ export default {
   mounted() {
     this.error = null
     this.loading = true
-    CobrancaApi.getAll().then(response => {
+    ClienteApi.getAll().then(response => {
       this.items = response.data.items
       this.loading = false
     })

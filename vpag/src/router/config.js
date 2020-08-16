@@ -93,7 +93,31 @@ export const protectedRoute = [
       {
         path: "/Cobrancas",
         name: "CobrancaTable",
-        component: () => import(/* webpackChunkName: "definition-table" */ "@/cobranca/Table.vue")
+        component: () => import(/* webpackChunkName: "cobranca-table" */ "@/cobranca/Table.vue")
+      }
+    ]
+  },
+  {
+    path: "/pagamentos",
+    component: DefaultLayout,
+    meta: { title: "Pagamentos", icon: "view_compact", group: "saidas", requiresAuth: true },
+    children: [
+      {
+        path: "/Pagamentos",
+        name: "PagamentoTable",
+        component: () => import(/* webpackChunkName: "pagamento-table" */ "@/pagamento/Table.vue")
+      }
+    ]
+  },
+  {
+    path: "/clientes",
+    component: DefaultLayout,
+    meta: { title: "Clientes", icon: "view_compact", group: "clientes", requiresAuth: true },
+    children: [
+      {
+        path: "/Clientes",
+        name: "ClienteTable",
+        component: () => import(/* webpackChunkName: "cliente-table" */ "@/cliente/Table.vue")
       }
     ]
   },

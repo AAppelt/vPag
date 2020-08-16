@@ -29,13 +29,13 @@ const Menu = [
       icon: "money_off",
       href: "/pagamentos"
     },
-    {
-      title: "Policies",
-      group: "routing",
-      component: "Policies",
-      icon: "clear_all",
-      href: "/policies"
-    },
+    // {
+    //   title: "Policies",
+    //   group: "routing",
+    //   component: "Policies",
+    //   icon: "clear_all",
+    //   href: "/policies"
+    // },
     { header: "Clientes" },
     {
       title: "Clientes",
@@ -44,20 +44,20 @@ const Menu = [
       href: "/clientes",
       name: "Cliente"
     },
-    {
-      title: "Team",
-      group: "contacts",
-      name: "Team",
-      icon: "people",
-      href: "/teams"
-    },
-    {
-      title: "Service",
-      group: "contacts",
-      name: "Service",
-      icon: "room_service",
-      href: "/services"
-    },
+    // {
+    //   title: "Team",
+    //   group: "contacts",
+    //   name: "Team",
+    //   icon: "people",
+    //   href: "/teams"
+    // },
+    // {
+    //   title: "Service",
+    //   group: "contacts",
+    //   name: "Service",
+    //   icon: "room_service",
+    //   href: "/services"
+    // },
     { header: "Extrato" },
     {
       title: "Extrato",
@@ -103,11 +103,11 @@ const Menu = [
     //   href: "/incidents/priorities"
     // },
     {
-      title: "Users",
-      group: "Configuration",
-      name: "Users",
-      icon: "account_box",
-      href: "/users"
+      title: "Configuracoes",
+      group: "configuracao",
+      name: "Configuracoes",
+      icon: "settings",
+      href: "/configuracoes"
     }
   ]
   // reorder menu

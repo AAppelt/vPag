@@ -2,10 +2,9 @@
   <v-layout wrap>
     <new-edit-sheet />
     <delete-dialog />
-    <div class="headline">Pagamentos</div>
+    <div class="headline">Clientes</div>
     <v-spacer />
-    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Novo Avulso</v-btn>    
-    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Novo Recorrente</v-btn>
+    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Novo</v-btn>
     <v-flex xs12>
       <v-layout column>
         <v-flex>
@@ -65,10 +64,10 @@
 <script>
 import { mapFields } from "vuex-map-fields"
 import { mapActions } from "vuex"
-import DeleteDialog from "@/pagamento/DeleteDialog.vue"
-import NewEditSheet from "@/pagamento/NewEditSheet.vue"
+import DeleteDialog from "@/cliente/DeleteDialog.vue"
+import NewEditSheet from "@/cliente/NewEditSheet.vue"
 export default {
-  name: "PagamentoTable",
+  name: "ClienteTable",
 
   components: {
     DeleteDialog,
@@ -86,7 +85,7 @@ export default {
   },
 
   computed: {
-    ...mapFields("pagamento", [
+    ...mapFields("cliente", [
       "table.options.q",
       "table.options.page",
       "table.options.itemsPerPage",
@@ -118,7 +117,7 @@ export default {
   },
 
   methods: {
-    ...mapActions("pagamento", ["getAll", "createEditShow", "removeShow"])
+    ...mapActions("cliente", ["getAll", "createEditShow", "removeShow"])
   }
 }
 </script>
