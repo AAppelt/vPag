@@ -1,7 +1,6 @@
 <template>
   <v-navigation-drawer app :value="toggleDrawer" clipped>
-    <!-- <vue-perfect-scrollbar -->
-      <v-virtual-scroll
+    <vue-perfect-scrollbar      
       class="drawer-menu--scroll"
       :settings="scrollSettings"
     >
@@ -94,18 +93,18 @@
           </v-list-item>
         </template>
       </v-list>
-      </v-virtual-scroll>
-    <!-- </vue-perfect-scrollbar> -->
+      <!-- </v-scroll> -->
+    </vue-perfect-scrollbar>
   </v-navigation-drawer>
 </template>
 <script>
 import menu from "@/api/menu";
 import { mapState } from "vuex";
-// import VuePerfectScrollbar from "vue-perfect-scrollbar";
+import VuePerfectScrollbar from "vue-perfect-scrollbar";
 export default {
   name: "AppDrawer",
   components: {
-    // VuePerfectScrollbar,
+    VuePerfectScrollbar,
   },
   props: {
     expanded: {
@@ -121,6 +120,7 @@ export default {
     return {
       menus: menu,
       scrollSettings: {
+        itemHeight:160,
         maxScrollbarLength: 160,
       },
     };

@@ -1,33 +1,33 @@
 const Menu = [
-    { header: "Incidents" },
     {
       title: "Dashboard",
       group: "dashboard",
       component: "Dashboard",
-      icon: "language",
+      icon: "account_balance",
       href: "/dashboard"
     },
+    { header: "Entradas" },    
     {
-      title: "Incidents",
-      group: "incidents",
-      component: "Incidents",
-      icon: "star",
-      href: "/incidents"
+      title: "Cobrancas",
+      group: "entradas",
+      component: "Cobrancas",
+      icon: "attach_money",
+      href: "/cobrancas"
     },
+    // {
+    //   title: "Tasks",
+    //   group: "tasks",
+    //   component: "Tasks",
+    //   icon: "playlist_add_check",
+    //   href: "/tasks"
+    // },
+    { header: "Saidas" },
     {
-      title: "Tasks",
-      group: "tasks",
-      component: "Tasks",
-      icon: "playlist_add_check",
-      href: "/tasks"
-    },
-    { header: "Routing" },
-    {
-      title: "Route",
+      title: "Pagamentos",
       group: "routing",
-      component: "route",
-      icon: "place",
-      href: "/route"
+      component: "pagamentos",
+      icon: "money_off",
+      href: "/pagamentos"
     },
     {
       title: "Policies",
@@ -36,13 +36,13 @@ const Menu = [
       icon: "clear_all",
       href: "/policies"
     },
-    { header: "Contacts" },
+    { header: "Clientes" },
     {
-      title: "Individual",
-      group: "contacts",
+      title: "Clientes",
+      group: "clientes",
       icon: "person",
-      href: "/individuals",
-      name: "Individual"
+      href: "/clientes",
+      name: "Cliente"
     },
     {
       title: "Team",
@@ -58,57 +58,50 @@ const Menu = [
       icon: "room_service",
       href: "/services"
     },
-    { header: "Knowledge" },
+    { header: "Extrato" },
     {
-      title: "Tags",
-      group: "contacts",
-      name: "Tags",
-      icon: "label",
-      href: "/Tags"
+      title: "Extrato",
+      group: "extratos",
+      name: "Extrato",
+      icon: "account_balance_wallet",
+      href: "/extrato"
     },
-    {
-      title: "Documents",
-      group: "knowledge",
-      name: "Documents",
-      icon: "assignment",
-      href: "/documents"
-    },
-    {
-      title: "Terms",
-      group: "knowledge",
-      name: "Terms",
-      icon: "layers",
-      href: "/terms"
-    },
-    {
-      title: "Definitions",
-      group: "knowledge",
-      name: "Defintitions",
-      icon: "book",
-      href: "/definitions"
-    },
-    { header: "Configuration" },
-    {
-      title: "Incident Types",
-      group: "Configuration",
-      name: "Incident Types",
-      icon: "settings",
-      href: "/incidents/types"
-    },
-    {
-      title: "Incident Priorities",
-      group: "Configuration",
-      name: "Incident Priorities",
-      icon: "report",
-      href: "/incidents/priorities"
-    },
-    {
-      title: "Plugins",
-      group: "Configuration",
-      name: "Plugins",
-      icon: "power",
-      href: "/plugins"
-    },
+    // {
+    //   title: "Documents",
+    //   group: "knowledge",
+    //   name: "Documents",
+    //   icon: "assignment",
+    //   href: "/documents"
+    // },
+    // {
+    //   title: "Terms",
+    //   group: "knowledge",
+    //   name: "Terms",
+    //   icon: "layers",
+    //   href: "/terms"
+    // },
+    // {
+    //   title: "Definitions",
+    //   group: "knowledge",
+    //   name: "Defintitions",
+    //   icon: "book",
+    //   href: "/definitions"
+    // },
+    { header: "Configuracoes" },
+    // {
+    //   title: "Incident Types",
+    //   group: "Configuration",
+    //   name: "Incident Types",
+    //   icon: "settings",
+    //   href: "/incidents/types"
+    // },
+    // {
+    //   title: "Incident Priorities",
+    //   group: "Configuration",
+    //   name: "Incident Priorities",
+    //   icon: "report",
+    //   href: "/incidents/priorities"
+    // },
     {
       title: "Users",
       group: "Configuration",

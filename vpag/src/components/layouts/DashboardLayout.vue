@@ -11,15 +11,15 @@
       <div class="page-wrapper">
         <v-container pa-4 grid-list-lg>
           <v-tabs v-model="tab">
-            <!-- <v-tab to="incidents">Incidents</v-tab> -->
-            <!-- <v-tab to="tasks">Tasks</v-tab> -->
+            <v-tab to="entradas">Entradas</v-tab>
+            <v-tab to="saidas">Saidas</v-tab>
           </v-tabs>
           <v-tabs-items v-model="tab">
-            <v-tab-item id="incidents">
-              <router-view name="incidents"></router-view>
+            <v-tab-item id="entradas">
+              <router-view name="entradas"></router-view>
             </v-tab-item>
-            <v-tab-item id="tasks">
-              <router-view name="tasks"></router-view>
+            <v-tab-item id="saidas">
+              <router-view name="saidas"></router-view>
             </v-tab-item>
           </v-tabs-items>
           <router-view />
@@ -28,11 +28,11 @@
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
         <span class="caption"
-          >vPag Security &copy; {{ new Date().getFullYear() }}</span
+          >  &copy; {{ new Date().getFullYear() }} by vPag. Todos os direitos reservados.</span
         >
         <v-spacer />
-        <span class="caption mr-1">Be Secure</span>
-        <v-icon color="pink" small>favorite</v-icon>
+        <span class="caption mr-1">Versão 0.0.0</span>
+        <!-- <v-icon color="pink" small>favorite</v-icon> -->
       </v-footer>
     </v-main>
     <!-- Go to top -->
@@ -52,6 +52,10 @@ export default {
   data() {
     return {
       tab: null,
+      scrollSettings: {
+        itemHeight:160,
+        maxScrollbarLength: 160,
+      },
     };
   },
   components: {

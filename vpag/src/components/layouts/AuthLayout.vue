@@ -10,11 +10,11 @@
     <!-- App Footer -->
     <v-footer height="auto" class="pa-3 app--footer">
       <span class="caption"
-        >Netflix Security &copy; {{ new Date().getFullYear() }}</span
+        > &copy; {{ new Date().getFullYear() }} by vPag. Todos os direitos reservados.</span
       >
       <v-spacer />
-      <span class="caption mr-1">Be Secure</span>
-      <v-icon color="pink" small>favorite</v-icon>
+      <span class="caption mr-1">Versão 0.0.0</span>
+      <!-- <v-icon color="pink" small>favorite</v-icon> -->
     </v-footer>
   </v-app>
 </template>

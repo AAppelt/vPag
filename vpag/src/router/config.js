@@ -45,37 +45,55 @@ export const publicRoute = [
 
 // NOTE: The order in which routes are added to the list matters when evaluated. For example, /incidents/report will take precendence over /incidents/:name.
 export const protectedRoute = [
+  // {
+  //   path: "/",
+  //   component: DefaultLayout,
+  //   meta: { title: "Dispatch", group: "incidents", icon: "", requiresAuth: true },
+  //   redirect: "/dashboard/"
+  // },
   {
     path: "/",
     component: DefaultLayout,
-    meta: { title: "Dispatch", group: "incidents", icon: "", requiresAuth: true },
-    redirect: "/dashboard/incidents"
+    meta: { title: "vPag", group: "entradas", icon: "", requiresAuth: true },
+    redirect: "/dashboard/"
   },
   {
     path: "/dashboard",
     component: DashboardLayout,
-    redirect: "/dashboard/incidents",
-    meta: { title: "Dashboard", group: "incidents", icon: "", requiresAuth: true },
+    redirect: "/dashboard/entradas",
+    meta: { title: "Dashboard", group: "entradas", icon: "", requiresAuth: true },
     children: [
       {
-        path: "incidents",
-        name: "IncidentOverview",
+        path: "entradas",
+        name: "EntradasOverview",
         meta: { hiddenInMenu: true },
         props: route => ({
           query: route.query
         }),
         component: () =>
-          import(/* webpackChunkName: "incident-overview" */ "@/dashboard/IncidentOverview.vue")
+          import(/* webpackChunkName: "entrada-overview" */ "@/dashboard/EntradaOverview.vue")
       },
       {
-        path: "tasks",
-        name: "TaskOverview",
+        path: "saidas",
+        name: "SaidasOverview",
         meta: { hiddenInMenu: true },
         props: route => ({
           query: route.query
         }),
         component: () =>
-          import(/* webpackChunkName: "task-overview" */ "@/dashboard/TaskOverview.vue")
+          import(/* webpackChunkName: "saida-overview" */ "@/dashboard/SaidaOverview.vue")
+      }
+    ]
+  },
+  {
+    path: "/cobrancas",
+    component: DefaultLayout,
+    meta: { title: "Cobrancas", icon: "view_compact", group: "entradas", requiresAuth: true },
+    children: [
+      {
+        path: "/Cobrancas",
+        name: "CobrancaTable",
+        component: () => import(/* webpackChunkName: "definition-table" */ "@/cobranca/Table.vue")
       }
     ]
   },

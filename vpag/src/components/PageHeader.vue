@@ -5,7 +5,7 @@
         {{ $route.meta.title || "" }}
       </h3>
     </div>
-    <v-breadcrumbs divider="/" :items="breadcrumbs">
+    <v-breadcrumbs color="primary" divider="/" :items="breadcrumbs">
       <template v-slot:item="props">
         <router-link
           :to="props.item.href"

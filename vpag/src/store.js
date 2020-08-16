@@ -3,6 +3,7 @@ import Vuex from "vuex"
 
 import app from "@/app/store"
 import definition from "@/definition/store"
+import cobranca from "@/cobranca/store"
 // import incident from "@/incident/store"
 // import incident_type from "@/incident_type/store"
 // import incident_priority from "@/incident_priority/store"
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     // task,
     // tag,
     definition,
+    cobranca,
     document,
     // incident,
     // incident_type,
