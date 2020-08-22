@@ -2,7 +2,7 @@
   <v-layout wrap>
     <new-edit-sheet />
     <delete-dialog />
-    <div class="headline">Pagamentos</div>
+    <div class="headline">Extrato</div>
     <v-spacer />
     <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Novo</v-btn>    
     <!-- <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Novo Recorrente</v-btn> -->
@@ -65,10 +65,10 @@
 <script>
 import { mapFields } from "vuex-map-fields"
 import { mapActions } from "vuex"
-import DeleteDialog from "@/pagamento/DeleteDialog.vue"
-import NewEditSheet from "@/pagamento/NewEditSheet.vue"
+import DeleteDialog from "@/extrato/DeleteDialog.vue"
+import NewEditSheet from "@/extrato/NewEditSheet.vue"
 export default {
-  name: "PagamentoTable",
+  name: "ExtratoTable",
 
   components: {
     DeleteDialog,
@@ -77,16 +77,17 @@ export default {
   data() {
     return {
       headers: [
-        { text: "Nome", value: "name", sortable: true },
-        { text: "Valor", value: "valor", sortable: false },
-        { text: "Data", value: "valor", sortable: false },
+        { text: "Cliente", value: "name", sortable: true },
+        { text: "Descricao", value: "descricao", sortable: true },
+        { text: "Data Lancamento", value: "data", sortable: false },
+        { text: "Valor", value: "valor", sortable: false },        
         { text: "", value: "data-table-actions", sortable: false, align: "end" }
       ]
     }
   },
 
   computed: {
-    ...mapFields("pagamento", [
+    ...mapFields("extrato", [
       "table.options.q",
       "table.options.page",
       "table.options.itemsPerPage",
@@ -118,7 +119,7 @@ export default {
   },
 
   methods: {
-    ...mapActions("pagamento", ["getAll", "createEditShow", "removeShow"])
+    ...mapActions("extrato", ["getAll", "createEditShow", "removeShow"])
   }
 }
 </script>

@@ -4,8 +4,8 @@
     <delete-dialog />
     <div class="headline">Cobrancas</div>
     <v-spacer />
-    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Nova Avulsa</v-btn>
-    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Nova Recorrente</v-btn>
+    <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Nova</v-btn>
+    <!-- <v-btn color="primary" dark class="mb-2" @click="createEditShow()">Nova Recorrente</v-btn> -->
     <v-flex xs12>
       <v-layout column>
         <v-flex>

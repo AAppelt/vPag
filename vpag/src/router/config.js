@@ -121,6 +121,18 @@ export const protectedRoute = [
       }
     ]
   },
+  {
+    path: "/extratos",
+    component: DefaultLayout,
+    meta: { title: "Extratos", icon: "view_compact", group: "extratos", requiresAuth: true },
+    children: [
+      {
+        path: "/Extratos",
+        name: "ExtratoTable",
+        component: () => import(/* webpackChunkName: "extrato-table" */ "@/extrato/Table.vue")
+      }
+    ]
+  },
   // {
   //   path: "/incidents/status",
   //   meta: { title: "Status", icon: "", requiresAuth: true },

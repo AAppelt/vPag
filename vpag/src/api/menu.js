@@ -64,7 +64,7 @@ const Menu = [
       group: "extratos",
       name: "Extrato",
       icon: "account_balance_wallet",
-      href: "/extrato"
+      href: "/extratos"
     },
     // {
     //   title: "Documents",

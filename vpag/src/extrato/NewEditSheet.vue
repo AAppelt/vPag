@@ -5,8 +5,8 @@
         <v-list-item two-line>
           <v-list-item-content>
             <v-list-item-title v-if="id" class="title">Alterar</v-list-item-title>
-            <v-list-item-title v-else class="title">Nova</v-list-item-title>
-            <v-list-item-subtitle>Cobranca</v-list-item-subtitle>
+            <v-list-item-title v-else class="title">Novo</v-list-item-title>
+            <v-list-item-subtitle>Extrato</v-list-item-subtitle>
           </v-list-item-content>
           <v-btn
             icon
@@ -29,26 +29,6 @@
               <v-flex xs12>
                 <span class="subtitle-2">Detalhes</span>
               </v-flex>
-              <v-flex xs12>
-                <ValidationProvider name="Recorrente" rules="required" immediate>
-                  <v-switch v-model="recorrente" inset :label="`Recorrente? ${recorrente.toString()}`"></v-switch>
-                </ValidationProvider>
-               </v-flex>
-               <v-flex xs12>
-                <ValidationProvider name="Valor" rules="required" immediate>
-                  <v-text-field
-                  v-model="valor"
-                    slot-scope="{ errors, valid }"
-                    :error-messages="errors"
-                    :success="valid"
-                    label="Valor"
-                    hint="O valor do documento."
-                    clearable
-                    required
-                    >
-                  </v-text-field>
-                </ValidationProvider>
-               </v-flex>
               <v-flex xs12>
                 <ValidationProvider name="Name" rules="required" immediate>
                   <v-autocomplete
@@ -78,8 +58,7 @@
                     clearable
                     required
                   /> 
-                </ValidationProvider>
-               
+                </ValidationProvider>               
               </v-flex>
               <v-flex xs12>
                 <ValidationProvider name="descricao" immediate>
@@ -89,14 +68,29 @@
                     label="Descricao"
                     :error-messages="errors"
                     :success="valid"
-                    hint="A descricao ou observacao do documento."
+                    hint="A descricao do documento."
                     clearable
                   />
                 </ValidationProvider>
               </v-flex>
+               <v-flex xs12>
+                <ValidationProvider name="Valor" rules="required" immediate>
+                  <v-text-field
+                  v-model="valor"
+                    slot-scope="{ errors, valid }"
+                    :error-messages="errors"
+                    :success="valid"
+                    label="Valor"
+                    hint="O valor do documento."
+                    clearable
+                    required
+                    >
+                  </v-text-field>
+                </ValidationProvider>
+               </v-flex>                            
               <v-flex xs12>
                 <ValidationProvider name="Document Weblink" rules="required" immediate>
-                  
+
                 </ValidationProvider>
               </v-flex>
               <v-flex xs12>
@@ -116,7 +110,17 @@
                   ></v-select>
               </v-flex>
               <v-flex xs12>
-                <!-- <incident-priority-multi-select v-model="incident_priorities" /> -->
+                <ValidationProvider name="observacao" immediate>
+                  <v-textarea
+                    v-model="observacao"
+                    slot-scope="{ errors, valid }"
+                    label="Observacao"
+                    :error-messages="errors"
+                    :success="valid"
+                    hint="A observacao do documento."
+                    clearable
+                  />
+                </ValidationProvider>
               </v-flex>
               <v-flex>
                 <!-- <incident-type-multi-select v-model="incident_types" /> -->
@@ -144,7 +148,7 @@ extend("required", {
 })
 
 export default {
-  name: "CobrancaNewEditSheet",
+  name: "ExtratoNewEditSheet",
 
    data () {
       return {
@@ -205,7 +209,7 @@ export default {
   },
 
   computed: {
-    ...mapFields("cobranca", [
+    ...mapFields("extrato", [
       "selected.name",
       "selected.description",
       "selected.terms",
@@ -221,7 +225,7 @@ export default {
   },
 
   methods: {
-    ...mapActions("cobranca", ["save", "closeCreateEdit"]),
+    ...mapActions("extrato", ["save", "closeCreateEdit"]),
 
     querySelections (v) {
         this.loading = true
