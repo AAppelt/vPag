@@ -34,17 +34,52 @@
         </v-list-item>
         <v-list-item>
           <v-list-item-content>
-            <tag-filter-combobox v-model="localTag" label="Tags" />
+            <v-select
+              v-model="select"                    
+              :items="formas"                    
+              cache-items                    
+              flat
+              hide-no-data
+              hide-details
+              label="Selecione o tipo de pagamento"
+              clearable
+              required
+            />
+            <!-- <tag-filter-combobox v-model="localTag" label="Tags" /> -->
           </v-list-item-content>
         </v-list-item>
         <v-list-item>
           <v-list-item-content>
-            <incident-type-combobox v-model="localIncidentType" />
+            <v-select
+              v-model="select"                    
+              :items="situacao"                    
+              cache-items                    
+              flat
+              hide-no-data
+              hide-details
+              label="Situacao"
+              clearable
+              required
+            />
+            <!-- <incident-type-combobox v-model="localIncidentType" /> -->
           </v-list-item-content>
         </v-list-item>
         <v-list-item>
           <v-list-item-content>
-            <incident-priority-combobox v-model="localIncidentPriority" />
+            <v-autocomplete
+              v-model="select"
+              :loading="loading"
+              :items="items"
+              :search-input.sync="search"
+              cache-items                    
+              flat
+              hide-no-data
+              hide-details
+              label="Selecione o cliente"
+              clearable
+              required
+            />
+            <!-- <incident-priority-combobox v-model="localIncidentPriority" /> -->
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -163,6 +198,16 @@ export default {
       assign(queryParams, this.serializeFilters())
       assign(queryParams, this.serializeWindow())
       this.$router.replace({ query: queryParams })
+    },
+    querySelections (v) {
+        this.loading = true
+        // Simulated ajax query
+        setTimeout(() => {
+          this.items = this.clientes.filter(e => {
+            return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1
+          })
+          this.loading = false
+        }, 500)
     }
   },
 
@@ -175,6 +220,53 @@ export default {
 
   data() {
     return {
+      search: null,
+      formas: [
+          'Dinheiro',
+          'Debito',
+          'Credito',
+          'Boleto',
+          'Carteira',
+        ],
+        situacao: [
+          'Todas',
+          'A Emitir',
+          'Em Aberto',
+          'Pagas',
+          'Vencidas',
+          'Canceladas',
+        ],
+        clientes: [
+          'Adrian',
+          'Afonso',
+          'Ester',
+          'Dina',
+          'Ivo',
+          'Kenny',
+          'Milene',
+          'Nilo',
+          'Roberto',
+          'Viviane',
+          'Andreia',
+          'David',
+          'Brenda',
+          'Júlio',
+          'Zara',
+          'Giulia',
+          'Joaquim',
+          'Indianara',
+          'Bella',
+          'Eduarda',
+          'Jasmeen',
+          'Jairo',
+          'Alberto',
+          'Miriam',
+          'Bruno',
+          'Edna',
+          'Katia',
+          'Luena',
+         
+        ],
       menu: false,
       display: false,
       localWindow: this.window,
@@ -221,6 +313,11 @@ export default {
     dateRangeText() {
       return this.localWindow.join(" ~ ")
     }
-  }
+  },
+  watch: {
+      search (val) {
+        val && val !== this.select && this.querySelections(val)
+      },
+    },
 }
 </script>

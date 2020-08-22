@@ -19,6 +19,9 @@
                 hide-details
                 clearable
               />
+              <v-flex class="d-flex justify-end" lg4 sm4 xs12>
+                <filter-dialog v-bind="query" @update="update" @loading="setLoading" />
+              </v-flex>
             </v-card-title>
             <v-data-table
               :headers="headers"
@@ -66,12 +69,14 @@
 import { mapFields } from "vuex-map-fields"
 import { mapActions } from "vuex"
 import DeleteDialog from "@/cobranca/DeleteDialog.vue"
+import FilterDialog from "@/cobranca/FilterDialog.vue"
 import NewEditSheet from "@/cobranca/NewEditSheet.vue"
 export default {
   name: "CobrancaTable",
 
   components: {
     DeleteDialog,
+    FilterDialog,
     NewEditSheet
   },
   data() {

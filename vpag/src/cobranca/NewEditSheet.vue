@@ -28,12 +28,7 @@
             <v-layout wrap>
               <v-flex xs12>
                 <span class="subtitle-2">Detalhes</span>
-              </v-flex>
-              <v-flex xs12>
-                <ValidationProvider name="Recorrente" rules="required" immediate>
-                  <v-switch v-model="recorrente" inset :label="`Recorrente? ${recorrente.toString()}`"></v-switch>
-                </ValidationProvider>
-               </v-flex>
+              </v-flex>              
                <v-flex xs12>
                 <ValidationProvider name="Valor" rules="required" immediate>
                   <v-text-field
@@ -78,8 +73,7 @@
                     clearable
                     required
                   /> 
-                </ValidationProvider>
-               
+                </ValidationProvider>               
               </v-flex>
               <v-flex xs12>
                 <ValidationProvider name="descricao" immediate>

@@ -19,6 +19,9 @@
                 hide-details
                 clearable
               />
+              <v-flex class="d-flex justify-end" lg4 sm4 xs12>
+                <filter-dialog v-bind="query" @update="update" @loading="setLoading" />
+              </v-flex>
             </v-card-title>
             <v-data-table
               :headers="headers"
@@ -67,11 +70,13 @@ import { mapFields } from "vuex-map-fields"
 import { mapActions } from "vuex"
 import DeleteDialog from "@/pagamento/DeleteDialog.vue"
 import NewEditSheet from "@/pagamento/NewEditSheet.vue"
+import FilterDialog from "@/pagamento/FilterDialog.vue"
 export default {
   name: "PagamentoTable",
 
   components: {
     DeleteDialog,
+    FilterDialog,
     NewEditSheet
   },
   data() {
